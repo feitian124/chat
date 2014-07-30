@@ -18,5 +18,6 @@ var app = new EmberApp();
 // along with the exports of each module as its value.
 
 app.import('vendor/socket.io-client/socket.io.js');
+app.import('vendor/ember-sockets/dist/ember-sockets.js');
 
 module.exports = app.toTree();
