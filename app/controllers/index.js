@@ -20,8 +20,8 @@ export default Ember.Controller.extend({
     sendMessage: function() {
       var message = this.get('message');
       if (message) {
-        this.get('messages').push(message);
-        alert(this.get('message'));
+        //js native push will not be observed
+        this.get('messages').pushObject(message);
         // tell server to execute 'new message' and send along one parameter
         this.socket.emit('new message', message);
       }
