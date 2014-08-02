@@ -3,13 +3,12 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   name: '',
   age: 16,
-  messages: ['m1', 'm2'],
+  messages: [],
   message: '',
   connected: false,
 
   actions: {
     cherryPickName: function() {
-      console.log("cherryPickName socket:", this.socket);
       this.socket.emit('cherryPickName');
     },
     addUser: function() {
@@ -22,6 +21,7 @@ export default Ember.Controller.extend({
       if (message) {
         //js native push will not be observed
         this.get('messages').pushObject(message);
+        this.set('message', '');
         // tell server to execute 'new message' and send along one parameter
         this.socket.emit('new message', message);
       }
