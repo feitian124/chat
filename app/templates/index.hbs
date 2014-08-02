@@ -1,4 +1,4 @@
-<h3 id='title'>this is in index.hbs</h2>
+<h3 id='title'>this is in index</h2>
 
 <a href="javascript:void(0);" {{action "cherryPickName"}}>give me another</a>!  
 <br/>
@@ -7,14 +7,18 @@ Our cherry-picked name: {{name}} (aged {{age}}) &ndash;
 <ul class="pages">
   <li class="chat page">
     <div class="chatArea">
-      <ul class="messages"></ul>
+      <ul class="messages">
+        {{#each msg in messages}} 
+          <li> {{msg}} </li>
+        {{/each}}
+      </ul>
     </div>
-    <input class="inputMessage" placeholder="Type here..."/>
+    {{input type="text" class="inputMessage" value=message placeholder="Type here..."}}
   </li>
   <li class="login page">
     <div class="form">
       <h3 class="title">What's your nickname?</h3>
-      <input class="usernameInput" type="text" maxlength="14" />
+      {{input type="text" class="usernameInput" value=name size="14"}}
     </div>
   </li>
 </ul>
