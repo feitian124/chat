@@ -11,7 +11,7 @@ server.listen(port, function () {
 });
 
 // Routing
-app.use(express.static(__dirname + '/dist'));
+app.use(express.static(__dirname + '/../dist'));
 
 // Chatroom
 
