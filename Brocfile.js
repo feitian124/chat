@@ -19,5 +19,8 @@ var app = new EmberApp();
 
 app.import('vendor/socket.io-client/socket.io.js');
 app.import('vendor/ember-sockets/dist/ember-sockets.js');
+app.import('vendor/bootstrap-sass-official/assets/javascripts/bootstrap.js');
+
+//css could include here but scss should included in app/styles
 
 module.exports = app.toTree();
