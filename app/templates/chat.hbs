@@ -1,0 +1,19 @@
+
+<ul class="pages">
+  <li class="chat page">
+    <div class="chatArea">
+      <ul class="messages">
+        {{#each msg in messages}} 
+        <li>{{name}}: {{msg}} </li>
+        {{/each}}
+      </ul>
+    </div>
+    {{input type="text" class="inputMessage" value=message placeholder="Type here..."}}
+  </li>
+  <li class="login page">
+    <div class="form">
+      <h3 class="title">What's your nickname?</h3>
+      {{input type="text" class="usernameInput" value=name size="14"}}
+    </div>
+  </li>
+</ul>
