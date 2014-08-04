@@ -7,9 +7,9 @@ exports.on = function (io) {
     var addedUser = false;
 
     // when the client emits 'new message', this listens and executes
-    socket.on('new message', function (data) {
+    socket.on('newMessage', function (data) {
       // we tell the client to execute 'new message'
-      socket.broadcast.emit('new message', {
+      socket.broadcast.emit('newMessage', {
         username: socket.username,
         message: data
       });

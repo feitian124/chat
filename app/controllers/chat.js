@@ -20,7 +20,7 @@ export default Ember.Controller.extend({
         this.get('messages').pushObject(message);
         this.set('message', '');
         // tell server to execute 'new message' and send along one parameter
-        this.socket.emit('new message', message);
+        this.socket.emit('newMessage', message);
       }
     }
   },
@@ -32,6 +32,10 @@ export default Ember.Controller.extend({
 
     disconnect: function() {
       console.log('EmberSockets has disconnected...');
+    },
+
+    newMessage: function(data) {
+      this.get('messages').pushObject(data.message);
     }
   }
 

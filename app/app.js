@@ -11,7 +11,7 @@ var App = Ember.Application.extend({
   Socket: window.EmberSockets.extend({
         host: 'localhost',
         port: 3000,
-        controllers: ['index']
+        controllers: ['chat']
     })
 });
 
