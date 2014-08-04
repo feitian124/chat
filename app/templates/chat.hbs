@@ -6,7 +6,7 @@
         <div class="chatArea">
           <ul class="messages">
             {{#each msg in messages}} 
-            <li>{{name}}: {{msg}} </li>
+              <li><p class="bg-info"><strong>{{msg.username}}</strong>: {{msg.message}}</p></li>
             {{/each}}
           </ul>
         </div>
