@@ -23,3 +23,8 @@ on website load.
 - Users can type chat messages to the chat room
 - A notification is sent to all users when a user joins or leaves
 the chatroom
+
+## 聊天室类别
+- 公共
+- 私有
+- 保持时长 1天, 1星期, 1个月, 1年.
