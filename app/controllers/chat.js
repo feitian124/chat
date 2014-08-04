@@ -8,9 +8,6 @@ export default Ember.Controller.extend({
   connected: false,
 
   actions: {
-    cherryPickName: function() {
-      this.socket.emit('cherryPickName');
-    },
     addUser: function() {
       var name = this.get('name');
       this.socket.emit('add user', name);
@@ -29,11 +26,6 @@ export default Ember.Controller.extend({
   },
 
   sockets: {
-    cherryPickedName: function(name, age) {
-      this.set('name', name);
-      this.set('age', age);
-    },
-
     connect: function() {
       console.log('EmberSockets has connected...');
     },

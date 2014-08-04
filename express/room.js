@@ -61,12 +61,5 @@ exports.on = function (io) {
         });
       }
     });
-
-    socket.on('cherryPickName', function(name, age) {
-      var names = ['Adam', 'Masha', 'Baki', 'Vaidas', 'Dhruv', 'Gabriele', 'Javier',
-        'Noemi', 'Dmitri', 'Simon', 'Artem', 'Raj', 'Mark', 'Mide'];
-        socket.emit('cherryPickedName', 'mingming', Math.floor(Math.random() * 30) + 1);
-    });
-
   });
 }
