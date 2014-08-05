@@ -17,7 +17,7 @@ export default Ember.Controller.extend({
       var message = this.get('message');
       var name = this.get('name');
       if (message) {
-        var lineItem = { username: name, message: message }
+        var lineItem = { username: name, message: message };
         //js native push will not be observed
         this.get('messages').pushObject(lineItem);
         this.set('message', '');
@@ -41,5 +41,4 @@ export default Ember.Controller.extend({
       this.get('messages').pushObject(data);
     }
   }
-
 });
