@@ -33,6 +33,9 @@ $chat-left-width: 180px;
       width: $chat-left-width;
       float: left;
       outline: none;
+      .full {
+        background-color: $chat-left-bg;
+      }
     }
     .right {
       height: 100%;
