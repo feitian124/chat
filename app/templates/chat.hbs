@@ -4,7 +4,7 @@
       <h1>Web Chat - 聊聊</h1>
     </div>
 
-    <div class="wrapper">
+    <div class="outputs">
       <div class="left">
         <ul>
             <li> name </li>
@@ -27,7 +27,14 @@
       </div>
     </div>
 
-    {{input type="text" class="msgInput" value=message placeholder="Type here.."}}
+    <div class="inputs">
+      <div class="left">
+        {{input type="text" class="full" value=name placeholder="Name here.."}}
+      </div>
+      <div class="right">
+        {{input type="text" class="full" value=message placeholder="Type here.."}}
+      </div>
+    </div>
 
     <div class="footer">liaoliao.com</div>
   </div>

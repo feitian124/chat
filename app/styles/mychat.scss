@@ -2,6 +2,7 @@ $chat-header-bg: #99bbbb;
 $chat-footer-bg: $chat-header-bg;
 $chat-left-bg: #CFD8D5;
 $chat-border-color: #000;
+$chat-left-width: 180px;
 
 .chat {
   height: 600px;
@@ -9,35 +10,47 @@ $chat-border-color: #000;
     background-color: $chat-header-bg;
     text-align: center;
   }
-  .wrapper {
-    height:100%;
+  .outputs {
+    height: 100%;
     border: 5px solid $chat-border-color;
     .left {
       background-color: $chat-left-bg;
       border-right: 5px solid $chat-border-color;
-      height:100%;
-      width:180px;
-      float:left;
+      height: 100%;
+      width: $chat-left-width;
+      float: left;
     }
     .right {
-      height:100%;
-      width:100%;
+      height: 100%;
     }
   }
-  .msgInput {
-    border: 5px solid $chat-border-color;
+  .inputs {
     height: 60px;
-    outline: none;
-    padding-left: 10px;
-    width: 100%;
+    border: 5px solid $chat-border-color;
+    .left {
+      border-right: 5px solid $chat-border-color;
+      height: 100%;
+      width: $chat-left-width;
+      float: left;
+      outline: none;
+    }
+    .right {
+      height: 100%;
+      outline: none;
+      padding-left: $chat-left-width;
+    }
+    .full {
+      height: 100%;
+      width: 100%;
+      padding-left: 10px;
+    }
   }
   .footer {
     background-color: $chat-footer-bg;
-    clear:both;
-    text-align:center;
+    clear: both;
+    text-align: center;
   }
-  h1 {margin-bottom:0;}
-  ul {margin:0;}
-  li {list-style:none;}
-
+  h1 {margin-bottom: 0;}
+  ul {margin: 0;}
+  li {list-style: none;}
 }
