@@ -24,6 +24,12 @@ export default Ember.Controller.extend({
         // tell server to execute 'new message' and send along one parameter
         this.socket.emit('newMessage', message);
       }
+    },
+    modalCancel: function() {
+      this.set('name', '');
+    },
+    modalSubmit: function() {
+      //nothing need done as name already binded
     }
   },
 

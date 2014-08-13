@@ -12,19 +12,17 @@ export default Ember.View.extend({
         Ember.$('.nameInput').focus();
       }
     }
-    
     if (event.which === 13) {
-      console.log(username + ":" + connected);
-      //if (connected) {
-      if (true) {
+      if (connected && username) {
         this.get('controller').send('sendMessage');
       } else if (username) {
-        this.showChatPage();
         this.get('controller').send('addUser');
       } else {
-        alert('please input username.');
-        //this.setUsername();
+        this.popForName();
       }
     }
+  },
+  popForName: function() {
+    Ember.$('#myModal').modal();
   }
 });
