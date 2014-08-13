@@ -1,28 +1,30 @@
 import Ember from 'ember';
 
 export default Ember.View.extend({
+  modalHidden: true,
   keyDown: function(event) {
-    var username = this.get('controller.name');
+    var name = this.get('controller.name');
     var connected = this.get('controller.connected');
-    // Auto-focus the current input when a key is typed
-    if (!(event.ctrlKey || event.metaKey || event.altKey)) {
-      if (username) {
-        Ember.$('.msgInput').focus();
-      } else {
-        Ember.$('.nameInput').focus();
-      }
-    }
+    var modalHidden = this.get('modalHidden');
     if (event.which === 13) {
-      if (connected && username) {
+      if (name && connected) {
         this.get('controller').send('sendMessage');
-      } else if (username) {
-        this.get('controller').send('addUser');
       } else {
-        this.popForName();
+        if (modalHidden) { 
+          this.popForName();
+          this.set('modalHidden', false);
+        } else {
+          this.get('controller').send('addUser');
+          Ember.$('#myModal').modal('hide');
+          Ember.$('#msgInput').focus();
+        }
       }
     }
   },
   popForName: function() {
-    Ember.$('#myModal').modal();
+    Ember.$('#myModal').on('shown.bs.modal', function () {
+      Ember.$('#modalName').focus();
+    });
+    Ember.$('#myModal').modal('show');
   }
 });

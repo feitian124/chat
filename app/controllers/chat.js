@@ -29,7 +29,8 @@ export default Ember.Controller.extend({
       this.set('name', '');
     },
     modalSubmit: function() {
-      //nothing need done as name already binded
+      // nothing need done as name already binded
+      this.send('addUser');
     }
   },
 
@@ -42,9 +43,15 @@ export default Ember.Controller.extend({
       console.log('EmberSockets has disconnected...');
     },
 
+    login: function() {
+      // send the message which interrupted by the input name modal
+      this.sendMessage();
+    },
+
     newMessage: function(data) {
       //this.get('messages').pushObject(data.username + ':' +data.message);
-      this.get('messages').pushObject(data);
+      //this.get('messages').pushObject(data);
+      console.log('newMessage:', data);
     }
   }
 });
