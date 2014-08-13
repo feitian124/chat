@@ -1,30 +1,31 @@
 
-# Socket.IO Chat
+# Web Chat - 聊聊
 
-A simple chat demo for socket.io
+A great chat service using `Ember + Socket.io + Express` no matter what Operate
+System you are using and , support most morden broswers, ideally for build your internal chat service.
 
 ## How to use
 
 ```
-$ cd socket.io
+$ get clone https://github.com/feitian124/chat.git
+$ cd chat
 $ npm install
-$ cd examples/chat
-$ npm install
-$ node .
+$ bowser install
+# start front end
+$ ember server
+# open another terminal, start backend end
+$ node express/index.js
 ```
 
-And point your browser to `http://localhost:3000`. Optionally specify
+Then point your browser to `http://localhost:4200`. Optionally specify
 a port by supplying the `PORT` env variable.
 
 ## Features
 
-- Multiple users can join a chat room by entering a unique username
-on website load.
+- Multiple users can join a chat room by entering a unique username on website load.
 - Users can type chat messages to the chat room
-- A notification is sent to all users when a user joins or leaves
-the chatroom
+- A notification is sent to all users when a user joins or leaves the chatroom
 
-## 聊天室类别
-- 公共
-- 私有
-- 保持时长 1天, 1星期, 1个月, 1年.
+### TODO
+- public , private chat room
+- room can keep in one day, week, month, year
