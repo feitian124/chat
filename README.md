@@ -1,12 +1,13 @@
-
 # Web Chat - 聊聊
 
-A great chat service using `Ember + Socket.io + Express` no matter what Operate
-System you are using and , support most morden broswers, ideally for build your internal chat service.
+A great chat service using `Ember + Socket.io + Express`.
+
+no matter what Operate System you are using and where you are, support most morden broswers,  
+ideally for build your internal chat service.
 
 ## How to use
 
-```
+```shell
 $ get clone https://github.com/feitian124/chat.git
 $ cd chat
 $ npm install
@@ -21,8 +22,8 @@ Then point your browser to `http://localhost:4200`. Optionally specify
 a port by supplying the `PORT` env variable.
 
 ## Features
-
-- Multiple users can join a chat room by entering a unique username on website load.
+- realtime backed by socket.io, ambitious backed by emberjs, easy backed by express.
+- Multiple users can join a chat room by entering a username.
 - Users can type chat messages to the chat room
 - A notification is sent to all users when a user joins or leaves the chatroom
 
