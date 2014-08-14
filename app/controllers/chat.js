@@ -6,12 +6,14 @@ export default Ember.Controller.extend({
   messages: [], //{ username, message }
   message: '',
   connected: false,
+  users: [],
 
   actions: {
     addUser: function() {
       var name = this.get('name');
       this.socket.emit('add user', name);
       this.set('connected', true);
+      console.log('addUser:', name);
     },
     sendMessage: function() {
       var message = this.get('message');

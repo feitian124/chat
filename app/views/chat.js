@@ -4,9 +4,13 @@ export default Ember.View.extend({
   modalHidden: true,
   keyDown: function(event) {
     var name = this.get('controller.name');
+    var connected = this.get('controller.connected');
     var modalHidden = this.get('modalHidden');
     if (event.which === 13) {
       if (name && modalHidden) {
+        if (!connected) {
+          this.get('controller').send('addUser');
+        }
         this.get('controller').send('sendMessage');
       } else {
         if (modalHidden) { 
