@@ -4,19 +4,20 @@ export default Ember.View.extend({
   modalHidden: true,
   keyDown: function(event) {
     var name = this.get('controller.name');
-    var connected = this.get('controller.connected');
     var modalHidden = this.get('modalHidden');
     if (event.which === 13) {
-      if (name && connected) {
+      if (name && modalHidden) {
         this.get('controller').send('sendMessage');
       } else {
         if (modalHidden) { 
           this.popForName();
           this.set('modalHidden', false);
         } else {
-          this.get('controller').send('addUser');
+          //below line result connect socket.io error, try find why
+          //this.get('controller').send('addUser');
           Ember.$('#myModal').modal('hide');
           Ember.$('#msgInput').focus();
+          this.set('modalHidden', true);
         }
       }
     }
