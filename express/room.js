@@ -6,6 +6,12 @@ exports.on = function (io) {
   io.on('connection', function (socket) {
     var addedUser = false;
 
+    setInterval(function () {
+      var date = new Date();
+      socket.emit('myping', date);
+      console.log('myping at:', date);
+    },1000*10);
+
     // when the client emits 'new message', this listens and executes
     socket.on('newMessage', function (data) {
       // we tell the client to execute 'new message'
