@@ -8,12 +8,21 @@ export default Ember.Controller.extend({
   connected: false,
   users: [],
 
+  sokects: function() {
+    var socket = this.socket;
+    socket.on('newMessage', function (data) {
+      console.log('newMessage:', data);
+    });
+    socket.on('myping', function (data) {
+      console.log('myping:', data);
+    });
+  }.on('init'),
+
   actions: {
     addUser: function() {
       var name = this.get('name');
       this.socket.emit('add user', name);
       this.set('connected', true);
-      console.log('addUser:', name);
     },
     sendMessage: function() {
       var message = this.get('message');
@@ -33,27 +42,6 @@ export default Ember.Controller.extend({
     modalSubmit: function() {
       // nothing need done as name already binded
       this.send('addUser');
-    }
-  },
-
-  sockets: {
-    connect: function() {
-      console.log('EmberSockets has connected...');
-    },
-
-    disconnect: function() {
-      console.log('EmberSockets has disconnected...');
-    },
-
-    login: function() {
-      // send the message which interrupted by the input name modal
-      this.sendMessage();
-    },
-
-    newMessage: function(data) {
-      //this.get('messages').pushObject(data.username + ':' +data.message);
-      //this.get('messages').pushObject(data);
-      console.log('newMessage:', data);
     }
   }
 });

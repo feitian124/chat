@@ -1,8 +1,16 @@
 /* global io */
 var socket = io('http://localhost:4201');
 
+socket.on('connect', function () {
+  console.log('socket has connected...');
+});
+
+socket.on('disconnect', function () {
+  console.log('socket has disconnected...');
+});
+
 export default {
-  name: 'socketLoader',
+  name: 'socket',
 
   initialize: function(container, app) {
     // Register the `socket:main` namespace
