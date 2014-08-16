@@ -9,9 +9,10 @@ export default Ember.Controller.extend({
   users: [],
 
   sokects: function() {
+    var controller = this;
     var socket = this.socket;
     socket.on('newMessage', function (data) {
-      console.log('newMessage:', data);
+      controller.get('messages').pushObject(data);
     });
     socket.on('myping', function (data) {
       console.log('myping:', data);

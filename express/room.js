@@ -10,7 +10,7 @@ exports.on = function (io) {
       var date = new Date();
       socket.emit('myping', date);
       console.log('myping at:', date);
-    },1000*10);
+    }, 1000*60);
 
     // when the client emits 'new message', this listens and executes
     socket.on('newMessage', function (data) {
@@ -19,6 +19,7 @@ exports.on = function (io) {
         username: socket.username,
         message: data
       });
+      console.log('newMessage:', data);
     });
 
     // when the client emits 'add user', this listens and executes
