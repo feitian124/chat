@@ -14,9 +14,6 @@ export default Ember.Controller.extend({
     socket.on('newMessage', function (data) {
       controller.get('messages').pushObject(data);
     });
-    socket.on('myping', function (data) {
-      console.log('myping:', data);
-    });
   }.on('init'),
 
   actions: {
