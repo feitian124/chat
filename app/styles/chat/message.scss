@@ -1,0 +1,25 @@
+$grep: #888888;
+img{
+  float: left; width: 60px; height: 60px;
+  -moz-box-shadow:0 0 5px $grep;
+  -webkit-box-shadow:0 0 5px $grep;
+  box-shadow:0 0 5px $grep;
+}
+
+.chat-bubble {
+  float:left;
+  position:relative;
+  display: block;
+  background-color: #ccc;
+  margin-top: 10px;
+  margin-left: 25px;
+  padding: 10px;
+  border:1px solid #333;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-radius:10px;
+  -moz-box-shadow:0 0 5px $grep;
+  -webkit-box-shadow:0 0 5px $grep;
+  box-shadow:0 0 5px $grep;
+}
+
