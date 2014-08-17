@@ -14,12 +14,16 @@ export default Ember.Controller.extend({
     socket.on('newMessage', function (data) {
       controller.get('messages').pushObject(data);
     });
+    socket.on('user joined', function (data) {
+      controller.get('users').pushObject(data.username);
+    });
   }.on('init'),
 
   actions: {
     addUser: function() {
       var name = this.get('name');
       this.socket.emit('add user', name);
+      this.get('users').pushObject(name);
       this.set('connected', true);
     },
     sendMessage: function() {

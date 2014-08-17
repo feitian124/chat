@@ -7,10 +7,13 @@
     <div class="outputs">
       <div class="left">
         <ul>
-            <li> name </li>
-            <li> name </li>
-            <li> name </li>
-            <li> name </li>
+          {{#each user in users}} 
+            <li>
+              <p>
+                <strong>{{user}}</strong>
+              </p>
+            </li>
+          {{/each}}
         </ul>
       </div>
 
