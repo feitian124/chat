@@ -26,7 +26,7 @@
 
     <div class="inputs">
       <div class="left">
-        {{input type="text" class="full" value=name placeholder="Name here.."}}
+        {{input type="text" class="full" value=name disabled=connected placeholder="Name here.."}}
       </div>
       <div class="right">
         {{input type="text" id="msgInput" class="full" value=message placeholder="Type here.."}}
@@ -49,7 +49,7 @@
         <h4 class="modal-title" id="myModalLabel">输入昵称</h4>
       </div>
       <div class="modal-body">
-        {{input value=name id="modalName" class="form-control" placeholder="输入昵称.."}}
+        {{input id="modalName" type="text" value=name class="form-control" placeholder="输入昵称.."}}
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" {{action 'modalCancel'}}>取消</button>
