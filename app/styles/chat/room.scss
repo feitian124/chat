@@ -3,9 +3,10 @@ $chat-footer-bg: $chat-header-bg;
 $chat-left-bg: #CFD8D5;
 $chat-border-color: #000;
 $chat-left-width: 180px;
+$grep: #888888;
 
 .chat {
-  height: 600px;
+  height: 650px;
   .header {
     background-color: $chat-header-bg;
     text-align: center;
@@ -17,11 +18,35 @@ $chat-left-width: 180px;
       background-color: $chat-left-bg;
       border-right: 5px solid $chat-border-color;
       height: 100%;
-      width: $chat-left-width;
       float: left;
+      width: $chat-left-width;
     }
     .right {
       height: 100%;
+      margin-left: $chat-left-width;
+      .message {
+        margin: 2px;
+        img{
+          float: left; 
+          width: 40px; 
+          height: 40px;
+          -moz-box-shadow:0 0 5px $grep;
+          -webkit-box-shadow:0 0 5px $grep;
+          box-shadow:0 0 5px $grep;
+        }
+        .chat-bubble {
+          margin-left: 60px;
+          background-color: #ccc;
+          padding: 10px;
+          border:1px solid #333;
+          -moz-border-radius:10px;
+          -webkit-border-radius:10px;
+          border-radius:10px;
+          -moz-box-shadow:0 0 5px $grep;
+          -webkit-box-shadow:0 0 5px $grep;
+          box-shadow:0 0 5px $grep;
+        }
+      }
     }
   }
   .inputs {
@@ -40,7 +65,7 @@ $chat-left-width: 180px;
     .right {
       height: 100%;
       outline: none;
-      padding-left: $chat-left-width;
+      margin-left: $chat-left-width;
     }
     .full {
       height: 100%;

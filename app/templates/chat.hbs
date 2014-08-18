@@ -18,16 +18,9 @@
       </div>
 
       <div class="right">
-        <ul class="messages">
-          {{#each msg in messages}} 
-            <li>
-              <p class="bg-info">
-                <strong>{{msg.username}}</strong>: {{msg.message}}
-              </p>
-            </li>
-          {{/each}}
-          {{chat-message}}
-        </ul>
+        {{#each msg in messages}} 
+          {{chat-message message=msg.message}}
+        {{/each}}
       </div>
     </div>
 
