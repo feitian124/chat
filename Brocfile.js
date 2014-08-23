@@ -19,6 +19,7 @@ var app = new EmberApp();
 
 app.import('vendor/socket.io-client/socket.io.js');
 app.import('vendor/bootstrap-sass-official/assets/javascripts/bootstrap.js');
+app.import('vendor/moment/moment.js');
 
 //css could include here but scss should included in app/styles
 

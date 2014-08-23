@@ -1,3 +1,5 @@
+var moment = require('moment');
+
 exports.on = function (io) {
   // usernames which are currently connected to the chat
   var usernames = {};
@@ -11,7 +13,8 @@ exports.on = function (io) {
       // we tell the client to execute 'new message'
       socket.broadcast.emit('newMessage', {
         username: socket.username,
-        message: data
+        message: data,
+        time: moment().format('MMM Do YYYY, h:mm:ss a')
       });
       console.log('newMessage:', data);
     });
@@ -64,7 +67,7 @@ exports.on = function (io) {
     });
 
     setInterval(function () {
-      var date = new Date();
+      var date = moment().format('MMM Do YYYY, h:mm:ss a');
       socket.emit('myping', date);
       console.log('myping at:', date);
     }, 1000*60);
