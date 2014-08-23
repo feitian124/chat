@@ -4,6 +4,7 @@ $chat-left-bg: #CFD8D5;
 $chat-border-color: #000;
 $chat-left-width: 180px;
 $grep: #888888;
+$avatar-size: 40px;
 
 .chat {
   height: 650px;
@@ -25,26 +26,25 @@ $grep: #888888;
       height: 100%;
       margin-left: $chat-left-width;
       .message {
-        margin: 2px;
-        img{
+        margin: 8px 4px;
+        .avatar {
           float: left; 
-          width: 40px; 
-          height: 40px;
+          width: $avatar-size; 
+          height: $avatar-size;
           -moz-box-shadow:0 0 5px $grep;
           -webkit-box-shadow:0 0 5px $grep;
           box-shadow:0 0 5px $grep;
         }
-        .chat-bubble {
-          margin-left: 60px;
-          background-color: #ccc;
-          padding: 10px;
-          border:1px solid #333;
-          -moz-border-radius:10px;
-          -webkit-border-radius:10px;
-          border-radius:10px;
-          -moz-box-shadow:0 0 5px $grep;
-          -webkit-box-shadow:0 0 5px $grep;
-          box-shadow:0 0 5px $grep;
+        .info {
+          margin-left: $avatar-size + 5px;
+          margin-bottom: 4px;
+          height: 15px;
+          font-size: 12px;
+          color: #999;
+        }
+        .text {
+          margin-left: $avatar-size + 5px;
+          padding-left: 8px;
         }
       }
     }
