@@ -11,8 +11,9 @@ exports.on = function (io) {
     // when the client emits 'new message', this listens and executes
     socket.on('newMessage', function (data) {
       // we tell the client to execute 'new message'
-      socket.broadcast.emit('newMessage', {
+      io.emit('newMessage', {
         username: socket.username,
+        avatar: socket.avatar,
         message: data,
         time: moment().format('MMM Do YYYY, h:mm:ss a')
       });
@@ -23,6 +24,7 @@ exports.on = function (io) {
     socket.on('add user', function (username) {
       // we store the username in the socket session for this client
       socket.username = username;
+      socket.avatar = 'images/avatars/' + numUsers%55 + '.jpg';
       // add the client's username to the global list
       usernames[username] = username;
       ++numUsers;
@@ -35,6 +37,7 @@ exports.on = function (io) {
         username: socket.username,
         numUsers: numUsers
       });
+      console.log("%s joind", username)
     });
 
     // when the client emits 'typing', we broadcast it to others
@@ -65,12 +68,5 @@ exports.on = function (io) {
         });
       }
     });
-
-    setInterval(function () {
-      var date = moment().format('MMM Do YYYY, h:mm:ss a');
-      socket.emit('myping', date);
-      console.log('myping at:', date);
-    }, 1000*60);
-
   });
 }

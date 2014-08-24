@@ -9,10 +9,6 @@ socket.on('disconnect', function () {
   console.log('socket has disconnected...');
 });
 
-socket.on('myping', function (data) {
-  console.log('myping:', data);
-});
-
 export default {
   name: 'socket',
 

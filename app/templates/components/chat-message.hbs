@@ -1,5 +1,5 @@
 <div class="message">
-  <img class="avatar" src="images/man.png"/>
+  <img class="avatar" {{bind-attr src=message.avatar}}/>
   <div class="info">
     {{message.username}} - {{message.time}}
   </div>

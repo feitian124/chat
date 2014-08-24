@@ -28,15 +28,8 @@ export default Ember.Controller.extend({
     },
     sendMessage: function() {
       var message = this.get('message');
-      var name = this.get('name');
       if (message) {
-        /* global moment */
-        var time = moment().format('MMM Do YYYY, h:mm:ss a');
-        var lineItem = { username: name, message: message, time: time };
-        //js native push will not be observed
-        this.get('messages').pushObject(lineItem);
         this.set('message', '');
-        // tell server to execute 'new message' and send along one parameter
         this.socket.emit('newMessage', message);
       }
     },
