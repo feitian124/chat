@@ -6,15 +6,12 @@
 
     <div class="outputs">
       <div class="left">
-        <ul>
-          {{#each user in users}} 
-            <li>
-              <p>
-                <strong>{{user}}</strong>
-              </p>
-            </li>
-          {{/each}}
-        </ul>
+        {{#each user in users}} 
+          <div class="user">
+            <img class="avatar" {{bind-attr src=user.avatar}}/>
+            <strong>{{user.username}}</strong>
+          <div>
+        {{/each}}
       </div>
 
       <div class="right">

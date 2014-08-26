@@ -82,3 +82,15 @@ $avatar-size: 40px;
   ul {margin: 0;}
   li {list-style: none;}
 }
+
+.user {
+  text-align: center;
+  .avatar {
+    margin: 2px;
+    width: $avatar-size; 
+    height: $avatar-size;
+    -moz-box-shadow:0 0 5px $grep;
+    -webkit-box-shadow:0 0 5px $grep;
+    box-shadow:0 0 5px $grep;
+  }
+}

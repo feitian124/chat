@@ -33,8 +33,9 @@ exports.on = function (io) {
         numUsers: numUsers
       });
       // echo globally (all clients) that a person has connected
-      socket.broadcast.emit('user joined', {
+      io.emit('user joined', {
         username: socket.username,
+        avatar: socket.avatar,
         numUsers: numUsers
       });
       console.log("%s joind", username)
