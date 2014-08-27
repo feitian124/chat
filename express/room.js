@@ -29,9 +29,6 @@ exports.on = function (io) {
       usernames[username] = username;
       ++numUsers;
       addedUser = true;
-      socket.emit('login', {
-        numUsers: numUsers
-      });
       // echo globally (all clients) that a person has connected
       io.emit('user joined', {
         username: socket.username,
@@ -39,20 +36,6 @@ exports.on = function (io) {
         numUsers: numUsers
       });
       console.log("%s joind", username)
-    });
-
-    // when the client emits 'typing', we broadcast it to others
-    socket.on('typing', function () {
-      socket.broadcast.emit('typing', {
-        username: socket.username
-      });
-    });
-
-    // when the client emits 'stop typing', we broadcast it to others
-    socket.on('stop typing', function () {
-      socket.broadcast.emit('stop typing', {
-        username: socket.username
-      });
     });
 
     // when the user disconnects.. perform this
