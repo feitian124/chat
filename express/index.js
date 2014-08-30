@@ -13,5 +13,5 @@ server.listen(port, function () {
 // Routing
 app.use(express.static(__dirname + '/../dist'));
 
-var room  = require('./room');
-room.on(io);
+var sockets  = require('./sockets');
+sockets.on(io);
