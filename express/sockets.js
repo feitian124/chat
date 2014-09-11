@@ -1,4 +1,5 @@
-var moment = require('moment');
+var moment = require('moment'),
+    User = require('./user');
 
 exports.on = function (io) {
   // usernames which are currently connected to the chat
