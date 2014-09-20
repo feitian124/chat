@@ -21,7 +21,13 @@
     <script>
       window.ChatENV = {{ENV}};
       window.EmberENV = window.ChatENV.EmberENV;
-    </script>
+      //fix ie8 no console issue
+      if (!window.console) {
+          window.console = {
+            log: function() { }
+          };
+        }
+      </script>
     <script src="assets/vendor.js"></script>
     <script src="assets/chat.js"></script>
     <script>
