@@ -11,8 +11,7 @@
     "ember-qunit-notifications": "^0.0.3",
     "ember-cli-test-loader": "rjackson/ember-cli-test-loader#0.0.4",
     "bootstrap-sass-official": "~3.2.0",
-    "moment": "~2.8.2",
-    "dummy": "git://github.com/hysios/ember-ie-compatibility-addon.git"
+    "moment": "~2.8.2"
   },
   "devDependencies": {
     "socket.io-client": "~1.0.6"
