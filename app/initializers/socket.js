@@ -1,5 +1,5 @@
 /* global io */
-var socket = io('http://localhost:4201');
+var socket = io(window.ChatENV.socketHost);
 
 socket.on('connect', function () {
   console.log('socket has connected...');
