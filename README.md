@@ -2,7 +2,7 @@
 
 A great chat service using `Ember + Socket.io + Express`.
 
-no matter what Operate System you are using and where you are, support most morden broswers,  
+no matter what Operate System you are using and where you are, support most morden broswers,
 ideally for build your internal chat service.
 
 ## How to use
@@ -30,3 +30,4 @@ a port by supplying the `PORT` env variable.
 ### TODO
 - public , private chat room
 - room can keep in one day, week, month, year
+- create a logo or ercode for a room so users can simple clici to visit.

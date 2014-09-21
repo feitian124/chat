@@ -2,7 +2,13 @@
   <div class="jumbotron">
     <h1>Let's chat!</h1>
     <p class="lead">Chat More Global, No More Barriers. Chat is the simplest way to let you chat with your friends, no matter it is from tweets, facebook, email, bbs, or on the way home! </p>
-    <p><a class="btn btn-lg btn-success" href="chat" role="button">聊聊吧</a></p>
+    <form class="form-inline" id="nameForm">
+      <div class="form-group">
+        {{input type="text" class="form-control input-lg" value=name placeholder="你的昵称"}}
+      </div>
+      <a {{bind-attr class=":btn :btn-primary isEnabled:enabled:disabled"}} {{action "goChat"}} role="button">聊聊吧</a>
+      <input type="submit" name="join" id="join" value="创建房间" class="btn btn-primary btn-success">
+    </form>
   </div>
 
   <!-- Example row of columns -->
