@@ -1,5 +1,7 @@
+import config from '../config/environment';
+
 /* global io */
-var socket = io(window.ChatENV.socketHost);
+var socket = io(config.socketHost);
 
 socket.on('connect', function () {
   console.log('socket has connected...');

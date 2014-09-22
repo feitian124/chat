@@ -12,6 +12,7 @@ export default Ember.Controller.extend({
     var controller = this;
     var socket = this.socket;
     socket.on('user joined', function (user) {
+      console.log('user: ', user);
       controller.transitionToRoute('chat');
     });
   }.on('init'),

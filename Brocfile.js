@@ -17,10 +17,11 @@ var app = new EmberApp();
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
-app.import('vendor/socket.io-client/socket.io.js');
-app.import('vendor/bootstrap-sass-official/assets/javascripts/bootstrap.js');
-app.import('vendor/moment/moment.js');
+app.import('bower_components/socket.io-client/socket.io.js');
+app.import('bower_components/bootstrap/dist/js/bootstrap.js');
+app.import('bower_components/moment/moment.js');
 
 //css could include here but scss should included in app/styles
+app.import('bower_components/bootstrap/dist/css/bootstrap.css');
 
 module.exports = app.toTree();
