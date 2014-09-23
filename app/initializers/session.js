@@ -1,5 +1,6 @@
 var session = {
-  name: 'rose'
+  name: null,
+  user: null
 };
 
 export var initialize = function(container, app) {

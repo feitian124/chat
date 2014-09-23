@@ -9,11 +9,10 @@ export default Ember.Controller.extend({
   }.property('name'),
 
   sokects: function() {
-    var controller = this;
-    console.log('session name:', this.session.name);
+    var _this = this;
     this.socket.on('joined-server', function (name) {
-      console.log('name: ', name);
-      controller.transitionToRoute('chat');
+      _this.session.name = name;
+      _this.transitionToRoute('chat');
     });
   }.on('init'),
 
