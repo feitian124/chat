@@ -10,9 +10,9 @@ export default Ember.Controller.extend({
 
   sokects: function() {
     var controller = this;
-    var socket = this.socket;
-    socket.on('user joined', function (user) {
-      console.log('user: ', user);
+    console.log('session name:', this.session.name);
+    this.socket.on('joined-server', function (name) {
+      console.log('name: ', name);
       controller.transitionToRoute('chat');
     });
   }.on('init'),
@@ -20,7 +20,7 @@ export default Ember.Controller.extend({
   actions: {
     goChat: function() {
       var name = this.get('name');
-      this.socket.emit('add user', name);
+      this.socket.emit('join-server', name);
     }
   }
 });

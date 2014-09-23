@@ -9,9 +9,12 @@ exports.on = function (io) {
   io.on('connection', function (socket) {
     var addedUser = false;
 
-    // when the client emits 'new message', this listens and executes
+    socket.on('join-server', function (name) {
+      io.emit('joined-server', name);
+      console.log('%s joined server', name);
+    });
+
     socket.on('newMessage', function (data) {
-      // we tell the client to execute 'new message'
       io.emit('newMessage', {
         username: socket.username,
         avatar: socket.avatar,
