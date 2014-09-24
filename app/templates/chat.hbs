@@ -6,7 +6,7 @@
 
     <div class="outputs">
       <div class="left">
-        {{#each user in users}} 
+        {{#each user in users}}
           <div class="user">
             <img class="avatar" {{bind-attr src=user.avatar}}/>
             <strong>{{user.username}}</strong>
@@ -15,7 +15,7 @@
       </div>
 
       <div class="right">
-        {{#each msg in messages}} 
+        {{#each msg in messages}}
           {{chat-message message=msg}}
         {{/each}}
       </div>
@@ -23,7 +23,7 @@
 
     <div class="inputs">
       <div class="left">
-        {{input type="text" class="full" value=name disabled=connected placeholder="Name here.."}}
+        {{input type="text" class="full" value=name disabled=true}}
       </div>
       <div class="right">
         {{input type="text" id="msgInput" class="full" value=message placeholder="Type here.."}}
@@ -31,27 +31,5 @@
     </div>
 
     <div class="footer">liaoliao.com</div>
-  </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" {{action 'modalCancel'}}>
-          <span aria-hidden="true">&times;</span>
-          <span class="sr-only">取消</span>
-        </button>
-        <h4 class="modal-title" id="myModalLabel">输入昵称</h4>
-      </div>
-      <div class="modal-body">
-        {{input id="modalName" type="text" value=name class="form-control" placeholder="输入昵称.."}}
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal" {{action 'modalCancel'}}>取消</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" {{action 'modalSubmit'}}>确定</button>
-      </div>
-    </div>
   </div>
 </div>

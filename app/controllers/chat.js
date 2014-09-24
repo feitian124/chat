@@ -1,7 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  name: '',
+  name: function() {
+    return this.session.name;
+  }.property(),
   age: 16,
   messages: [], //{ username, message, time }
   message: '',
@@ -31,13 +33,6 @@ export default Ember.Controller.extend({
         this.set('message', '');
         this.socket.emit('newMessage', message);
       }
-    },
-    modalCancel: function() {
-      this.set('name', '');
-    },
-    modalSubmit: function() {
-      // nothing need done as name already binded
-      this.send('addUser');
     }
   }
 });
