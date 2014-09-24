@@ -1,8 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  name: function() {
-    return this.session.name;
+  user: function() {
+    return this.session.user;
   }.property(),
   age: 16,
   messages: [], //{ username, message, time }

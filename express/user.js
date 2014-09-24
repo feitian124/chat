@@ -1,6 +1,7 @@
-function User(name, avatar) {
+function User(name) {
   this.name = name;
-  this.avatar = avatar;
+  this.avatar = 'images/avatars/1.jpg';
+  this.room = null;
   this.status = "available";
 };
 

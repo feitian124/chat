@@ -1,5 +1,6 @@
 var moment = require('moment'),
-    User = require('./user');
+    User = require('./user'),
+    people = {};
 
 exports.on = function (io) {
   // usernames which are currently connected to the chat
@@ -10,7 +11,9 @@ exports.on = function (io) {
     var addedUser = false;
 
     socket.on('join-server', function (name) {
-      io.emit('joined-server', name);
+      var user = new User(name);
+      people[socket.id] = user;
+      io.emit('joined-server', user);
       console.log('%s joined server', name);
     });
 
