@@ -20,6 +20,7 @@ var app = new EmberApp();
 app.import('bower_components/socket.io-client/socket.io.js');
 app.import('bower_components/bootstrap/dist/js/bootstrap.js');
 app.import('bower_components/moment/moment.js');
+app.import('vendor/localstorage_adapter.js');
 
 //css could include here but scss should included in app/styles
 app.import('bower_components/bootstrap/dist/css/bootstrap.css');
