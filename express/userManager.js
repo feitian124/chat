@@ -1,7 +1,7 @@
 var _ = require('lodash'),
     User = require('./user.js');
 
-function UserManager(name) {
+function UserManager() {
   this.users = [];
 };
 
@@ -18,6 +18,14 @@ UserManager.prototype.length = function() {
   return this.users.length;
 };
 
-module.exports = UserManager;
+UserManager.prototype.contains = function(user) {
+  var result = _.where(this.users, function(u) {
+    return user.name === u.name;
+  });
+  return result.length > 0;
+};
+
+var um = new UserManager();
+module.exports = um;
 
 //var room = new Room(name, id, socket.id);
