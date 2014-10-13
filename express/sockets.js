@@ -1,5 +1,6 @@
 var moment = require('moment'),
     User = require('./user'),
+    userManager = require('./userManager'),
     people = {};
 
 exports.on = function (io) {
