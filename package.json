@@ -30,11 +30,15 @@
     "ember-cli-qunit": "0.1.0",
     "ember-data": "1.0.0-beta.10",
     "express": "^4.8.5",
+    "express-generator": "^4.9.0",
     "glob": "^4.0.5",
     "lodash": "^2.4.1",
     "moment": "^2.8.2",
     "originate": "0.1.5",
-    "socket.io": "1.0.6"
+    "sequelize": "^2.0.0-rc1",
+    "sequelize-cli": "^0.3.3",
+    "socket.io": "1.0.6",
+    "sqlite3": "^3.0.2"
   },
   "dependencies": {
     "ember-ie-compatibility-addon": "git://github.com/hysios/ember-ie-compatibility-addon.git"
