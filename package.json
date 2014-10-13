@@ -38,7 +38,12 @@
     "sequelize": "^2.0.0-rc1",
     "sequelize-cli": "^0.3.3",
     "socket.io": "1.0.6",
-    "sqlite3": "^3.0.2"
+    "sqlite3": "^3.0.2",
+    "static-favicon": "~1.0.0",
+    "morgan": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "debug": "~0.7.4",
+    "jade": "~1.3.0"
   },
   "dependencies": {
     "ember-ie-compatibility-addon": "git://github.com/hysios/ember-ie-compatibility-addon.git"
