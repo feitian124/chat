@@ -3,9 +3,9 @@ import {
   test
 } from 'ember-qunit';
 
-moduleForModel('user', 'User', {
+moduleForModel('task', 'Task', {
   // Specify the other units that are required for this test.
-  needs: ['model:task']
+  needs: ['model:user']
 });
 
 test('it exists', function() {
