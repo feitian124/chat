@@ -5,8 +5,13 @@ moduleFor('controller:index', 'IndexController', {
   // needs: ['controller:foo']
 });
 
+/* global io */
+var socket = io();
+
 // Replace this with your real tests.
 test('it exists', function() {
-  var controller = this.subject();
+  var controller = this.subject({
+    socket: socket
+  });
   ok(controller);
 });
