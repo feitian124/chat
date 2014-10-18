@@ -2,6 +2,16 @@ var models  = require('../models');
 var express = require('express');
 var router  = express.Router();
 
+router.get('/', function(req, res) {
+  models.User.findAll({
+    include: [ models.Task ]
+  }).success(function(users) {
+    res.send({
+      users: users
+    });
+  });
+});
+
 router.post('/create', function(req, res) {
   models.User.create({
     username: req.param('username')
