@@ -26,6 +26,17 @@ app.use(cors());
 
 app.use('/', routes);
 app.use('/users', users);
+app.get('/api/v1/users', function(req, res){
+  res.send({
+    users: [{
+      id: 1,
+      username: 'user1'
+    }, {
+      id: 2,
+      username: 'user2'
+    }]
+  });
+});
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
