@@ -1,12 +1,10 @@
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
-  name: null,
-
+export default Ember.ObjectController.extend({
   isEnabled: function() {
-    var name = this.get('name');
+    var name = this.get('username');
     return (name && name.length >=3) ? true : false;
-  }.property('name'),
+  }.property('username'),
 
   sokects: function() {
     var _this = this;
@@ -18,8 +16,13 @@ export default Ember.Controller.extend({
 
   actions: {
     goChat: function() {
-      var name = this.get('name');
-      this.socket.emit('join-server', name);
+      var _this = this;
+      this.get('model').save().then(function(user) {
+        _this.session.user = user;
+        _this.transitionToRoute('chat');
+      }, function(err) {
+        console.log('err: ', err);
+      });
     }
   }
 });

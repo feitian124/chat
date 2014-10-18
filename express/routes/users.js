@@ -12,11 +12,11 @@ router.get('/', function(req, res) {
   });
 });
 
-router.post('/create', function(req, res) {
+router.post('/', function(req, res) {
   models.User.create({
     username: req.param('username')
-  }).success(function() {
-    res.redirect('/');
+  }).success(function(user) {
+    res.send({user: user});
   });
 });
 
