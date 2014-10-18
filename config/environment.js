@@ -6,6 +6,8 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    host: 'http://192.168.0.112:4201',
+    namespace: 'api/v1',
     socketHost: 'http://192.168.0.112:4201',
     EmberENV: {
       FEATURES: {
